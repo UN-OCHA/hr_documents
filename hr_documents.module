@@ -35,7 +35,8 @@ function hr_documents_og_features_toggle($entity, $entity_id, $entity_type, $fea
     }
     else {
       // See if menu link already exists
-      if (empty(menu_link_get_preferred('node/'.$entity_id.'/documents', OG_MENU_SINGLE_MENU_NAME))) {
+      $menu_link = menu_link_get_preferred('node/'.$entity_id.'/documents', OG_MENU_SINGLE_MENU_NAME);
+      if (empty($menu_link)) {
         $menu_link = array(
           'link_path' => 'node/'.$entity_id.'/documents',
           'link_title' => 'Documents',
