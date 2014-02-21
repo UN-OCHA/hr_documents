@@ -38,7 +38,7 @@ function hr_documents_views_default_views() {
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['content'] = 'There are no results';
   $handler->display->display_options['empty']['area']['format'] = 'plain_text';
-  /* Field: Indexed Node: Name */
+  /* Field: Indexed Node: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'search_api_index_default_node_index';
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
@@ -49,7 +49,7 @@ function hr_documents_views_default_views() {
   $handler->display->display_options['fields']['field_document_type']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['field_document_type']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_document_type']['bypass_access'] = 0;
-  /* Field: Indexed Node: Organization */
+  /* Field: Indexed Node: Organizations */
   $handler->display->display_options['fields']['field_organizations']['id'] = 'field_organizations';
   $handler->display->display_options['fields']['field_organizations']['table'] = 'search_api_index_default_node_index';
   $handler->display->display_options['fields']['field_organizations']['field'] = 'field_organizations';
@@ -91,6 +91,13 @@ function hr_documents_views_default_views() {
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'hr_document' => 'hr_document',
+  );
+  /* Filter criterion: Indexed Node: Status */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'search_api_index_default_node_index';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = array(
+    1 => '1',
   );
 
   /* Display: List */
@@ -188,9 +195,9 @@ function hr_documents_views_default_views() {
     t('next ›'),
     t('last »'),
     t('There are no results'),
-    t('Name'),
+    t('Title'),
     t('Document type'),
-    t('Organization'),
+    t('Organizations'),
     t('Publication Date'),
     t('Files'),
     t('All'),
@@ -245,15 +252,6 @@ function hr_documents_views_default_views() {
     'image_style' => 'thumbnail',
     'image_link' => 'content',
   );
-  /* Field: Taxonomy term: Name */
-  $handler->display->display_options['fields']['name_field']['id'] = 'name_field';
-  $handler->display->display_options['fields']['name_field']['table'] = 'field_data_name_field';
-  $handler->display->display_options['fields']['name_field']['field'] = 'name_field';
-  $handler->display->display_options['fields']['name_field']['relationship'] = 'field_document_type_target_id';
-  $handler->display->display_options['fields']['name_field']['label'] = '';
-  $handler->display->display_options['fields']['name_field']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['name_field']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['name_field']['link_to_entity'] = 0;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -296,21 +294,6 @@ function hr_documents_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'hr_document' => 'hr_document',
   );
-  /* Filter criterion: Taxonomy term: Name (name_field) */
-  $handler->display->display_options['filters']['name_field_value']['id'] = 'name_field_value';
-  $handler->display->display_options['filters']['name_field_value']['table'] = 'field_data_name_field';
-  $handler->display->display_options['filters']['name_field_value']['field'] = 'name_field_value';
-  $handler->display->display_options['filters']['name_field_value']['relationship'] = 'field_document_type_target_id';
-  $handler->display->display_options['filters']['name_field_value']['operator'] = 'word';
-  $handler->display->display_options['filters']['name_field_value']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['name_field_value']['expose']['operator_id'] = 'name_field_value_op';
-  $handler->display->display_options['filters']['name_field_value']['expose']['label'] = 'Document type';
-  $handler->display->display_options['filters']['name_field_value']['expose']['operator'] = 'name_field_value_op';
-  $handler->display->display_options['filters']['name_field_value']['expose']['identifier'] = 'name_field_value';
-  $handler->display->display_options['filters']['name_field_value']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-  );
 
   /* Display: List */
   $handler = $view->new_display('panel_pane', 'List', 'list');
@@ -336,6 +319,49 @@ function hr_documents_views_default_views() {
       'label' => 'Content: Groups audience (og_group_ref)',
     ),
   );
+
+  /* Display: Thumbnail */
+  $handler = $view->new_display('panel_pane', 'Thumbnail', 'thumbnail');
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: File(s) (field_files_collection) */
+  $handler->display->display_options['relationships']['field_files_collection_value']['id'] = 'field_files_collection_value';
+  $handler->display->display_options['relationships']['field_files_collection_value']['table'] = 'field_data_field_files_collection';
+  $handler->display->display_options['relationships']['field_files_collection_value']['field'] = 'field_files_collection_value';
+  $handler->display->display_options['relationships']['field_files_collection_value']['delta'] = '0';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Field collection item: File */
+  $handler->display->display_options['fields']['field_file']['id'] = 'field_file';
+  $handler->display->display_options['fields']['field_file']['table'] = 'field_data_field_file';
+  $handler->display->display_options['fields']['field_file']['field'] = 'field_file';
+  $handler->display->display_options['fields']['field_file']['relationship'] = 'field_files_collection_value';
+  $handler->display->display_options['fields']['field_file']['label'] = '';
+  $handler->display->display_options['fields']['field_file']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_file']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_file']['type'] = 'file_rendered';
+  $handler->display->display_options['fields']['field_file']['settings'] = array(
+    'file_view_mode' => 'preview',
+  );
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'not found';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['argument_input'] = array(
+    'nid' => array(
+      'type' => 'context',
+      'context' => 'entity:node.nid',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Content: Nid',
+    ),
+  );
   $translatables['hr_documents_panes'] = array(
     t('Master'),
     t('more'),
@@ -349,10 +375,12 @@ function hr_documents_views_default_views() {
     t('Publication Date'),
     t('Name'),
     t('All'),
-    t('Document type'),
     t('List'),
     t('Documents per space'),
     t('Documents'),
+    t('Thumbnail'),
+    t('field collection item from field_files_collection'),
+    t('View panes'),
   );
   $export['hr_documents_panes'] = $view;
 

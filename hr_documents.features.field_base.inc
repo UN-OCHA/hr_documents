@@ -84,7 +84,7 @@ function hr_documents_field_default_field_bases() {
         0 => 'fid',
       ),
       'profile2_private' => FALSE,
-      'uri_scheme' => 'public',
+      'uri_scheme' => 'private',
     ),
     'translatable' => 0,
     'type' => 'file',
