@@ -117,7 +117,7 @@ function hr_documents_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_hr_document_pattern';
-  $strongarm->value = '[node:og-group-ref:url:path]/documents/[node:title]';
+  $strongarm->value = '[node:og-group-ref:url:path]/document/[node:title]';
   $export['pathauto_node_hr_document_pattern'] = $strongarm;
 
   return $export;
