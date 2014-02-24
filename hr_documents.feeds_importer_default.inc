@@ -149,48 +149,58 @@ function hr_documents_feeds_importer_default() {
             'unique' => FALSE,
           ),
           7 => array(
+            'source' => 'Sectors',
+            'target' => 'field_sectors:label',
+            'unique' => FALSE,
+          ),
+          8 => array(
             'source' => 'Clusters/Sectors',
             'target' => 'field_bundles:label',
             'unique' => FALSE,
           ),
-          8 => array(
+          9 => array(
             'source' => 'Publication Date',
             'target' => 'field_publication_date:start',
             'unique' => FALSE,
           ),
-          9 => array(
+          10 => array(
             'source' => 'Organization',
             'target' => 'field_organizations:label',
             'unique' => FALSE,
           ),
-          10 => array(
+          11 => array(
             'source' => 'Coordination hubs',
             'target' => 'field_coordination_hubs:label',
             'unique' => FALSE,
           ),
-          11 => array(
+          12 => array(
             'source' => 'Locations',
             'target' => 'field_locations:label',
             'unique' => FALSE,
           ),
-          12 => array(
+          13 => array(
             'source' => 'Fundings',
             'target' => 'field_funding_methods:label',
             'unique' => FALSE,
           ),
-          13 => array(
+          14 => array(
             'source' => 'Themes',
             'target' => 'field_themes:label',
             'unique' => FALSE,
           ),
-          14 => array(
+          15 => array(
             'source' => 'Disasters',
             'target' => 'field_disasters:label',
             'unique' => FALSE,
           ),
-          15 => array(
+          16 => array(
             'source' => 'Space',
             'target' => 'og_group_ref:label',
+            'unique' => FALSE,
+          ),
+          17 => array(
+            'source' => 'Author',
+            'target' => 'user_mail',
             'unique' => FALSE,
           ),
         ),

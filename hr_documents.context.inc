@@ -20,53 +20,60 @@ function hr_documents_context_default_contexts() {
     'path' => array(
       'values' => array(
         'node/*/documents' => 'node/*/documents',
+        'node/*/documents/*' => 'node/*/documents/*',
       ),
     ),
   );
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'views--exp-hr_documents-list' => array(
+          'module' => 'views',
+          'delta' => '-exp-hr_documents-list',
+          'region' => 'branding',
+          'weight' => '-10',
+        ),
+        'current_search-hr_current_search' => array(
+          'module' => 'current_search',
+          'delta' => 'hr_current_search',
+          'region' => 'sidebar_first',
+          'weight' => '-10',
+        ),
         'facetapi-2VJqM7IlPMSIoTIQrsoqy1dgG563hXbS' => array(
           'module' => 'facetapi',
           'delta' => '2VJqM7IlPMSIoTIQrsoqy1dgG563hXbS',
           'region' => 'sidebar_first',
-          'weight' => '-10',
+          'weight' => '-8',
         ),
         'facetapi-ZXNTNWz3w05hh3aLGFw0ofPRZUa5biIZ' => array(
           'module' => 'facetapi',
           'delta' => 'ZXNTNWz3w05hh3aLGFw0ofPRZUa5biIZ',
           'region' => 'sidebar_first',
-          'weight' => '-9',
+          'weight' => '-7',
         ),
         'facetapi-sp6ljjoCBKBVws0uia1DCKcDmln6TeUq' => array(
           'module' => 'facetapi',
           'delta' => 'sp6ljjoCBKBVws0uia1DCKcDmln6TeUq',
           'region' => 'sidebar_first',
-          'weight' => '-8',
+          'weight' => '-6',
         ),
         'facetapi-w7XuwcVu1l6DNu4aCenMydri96KBLxYh' => array(
           'module' => 'facetapi',
           'delta' => 'w7XuwcVu1l6DNu4aCenMydri96KBLxYh',
           'region' => 'sidebar_first',
-          'weight' => '-7',
+          'weight' => '-5',
         ),
         'facetapi-uulIYjH3ZtSu9hhI5ARgBYQeEUNqWe17' => array(
           'module' => 'facetapi',
           'delta' => 'uulIYjH3ZtSu9hhI5ARgBYQeEUNqWe17',
           'region' => 'sidebar_first',
-          'weight' => '-6',
-        ),
-        'facetapi-LhsTdqulwuTvZl35GFMu2uKURHDnySAL' => array(
-          'module' => 'facetapi',
-          'delta' => 'LhsTdqulwuTvZl35GFMu2uKURHDnySAL',
-          'region' => 'sidebar_first',
-          'weight' => '-5',
+          'weight' => '-4',
         ),
         'facetapi-9GGN5HfHaQpjLAfMWHJknvdGmR74ha9v' => array(
           'module' => 'facetapi',
           'delta' => '9GGN5HfHaQpjLAfMWHJknvdGmR74ha9v',
           'region' => 'sidebar_first',
-          'weight' => '-4',
+          'weight' => '-3',
         ),
       ),
     ),
