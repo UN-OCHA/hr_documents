@@ -42,6 +42,12 @@ function hr_documents_views_default_views() {
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'search_api_index_default_node_index';
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
+  $handler->display->display_options['fields']['title_field']['type'] = 'title_linked';
+  $handler->display->display_options['fields']['title_field']['settings'] = array(
+    'title_style' => '_none',
+    'title_link' => 'content',
+    'title_class' => '',
+  );
   /* Field: Indexed Node: Document type */
   $handler->display->display_options['fields']['field_document_type']['id'] = 'field_document_type';
   $handler->display->display_options['fields']['field_document_type']['table'] = 'search_api_index_default_node_index';
@@ -49,7 +55,7 @@ function hr_documents_views_default_views() {
   $handler->display->display_options['fields']['field_document_type']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['field_document_type']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_document_type']['bypass_access'] = 0;
-  /* Field: Indexed Node: Organizations */
+  /* Field: Indexed Node: Organization */
   $handler->display->display_options['fields']['field_organizations']['id'] = 'field_organizations';
   $handler->display->display_options['fields']['field_organizations']['table'] = 'search_api_index_default_node_index';
   $handler->display->display_options['fields']['field_organizations']['field'] = 'field_organizations';
@@ -173,11 +179,58 @@ function hr_documents_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'views_data_export_csv';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Indexed Node: Title */
+  $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
+  $handler->display->display_options['fields']['title_field']['table'] = 'search_api_index_default_node_index';
+  $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
+  $handler->display->display_options['fields']['title_field']['type'] = 'title_linked';
+  $handler->display->display_options['fields']['title_field']['settings'] = array(
+    'title_style' => '_none',
+    'title_link' => 'content',
+    'title_class' => '',
+  );
+  /* Field: Indexed Node: Document type */
+  $handler->display->display_options['fields']['field_document_type']['id'] = 'field_document_type';
+  $handler->display->display_options['fields']['field_document_type']['table'] = 'search_api_index_default_node_index';
+  $handler->display->display_options['fields']['field_document_type']['field'] = 'field_document_type';
+  $handler->display->display_options['fields']['field_document_type']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['field_document_type']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_document_type']['bypass_access'] = 0;
+  /* Field: Indexed Node: Organization */
+  $handler->display->display_options['fields']['field_organizations']['id'] = 'field_organizations';
+  $handler->display->display_options['fields']['field_organizations']['table'] = 'search_api_index_default_node_index';
+  $handler->display->display_options['fields']['field_organizations']['field'] = 'field_organizations';
+  $handler->display->display_options['fields']['field_organizations']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['field_organizations']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_organizations']['bypass_access'] = 0;
+  /* Field: Indexed Node: Publication Date */
+  $handler->display->display_options['fields']['field_publication_date']['id'] = 'field_publication_date';
+  $handler->display->display_options['fields']['field_publication_date']['table'] = 'search_api_index_default_node_index';
+  $handler->display->display_options['fields']['field_publication_date']['field'] = 'field_publication_date';
+  $handler->display->display_options['fields']['field_publication_date']['settings'] = array(
+    'format_type' => 'short',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Field: Indexed Node: File(s) */
+  $handler->display->display_options['fields']['field_files_collection']['id'] = 'field_files_collection';
+  $handler->display->display_options['fields']['field_files_collection']['table'] = 'search_api_index_default_node_index';
+  $handler->display->display_options['fields']['field_files_collection']['field'] = 'field_files_collection';
+  $handler->display->display_options['fields']['field_files_collection']['label'] = 'Files';
+  $handler->display->display_options['fields']['field_files_collection']['alter']['trim_whitespace'] = TRUE;
+  $handler->display->display_options['fields']['field_files_collection']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['field_files_collection']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['field_files_collection']['display'] = 'view';
+  $handler->display->display_options['fields']['field_files_collection']['view_mode'] = 'token';
+  $handler->display->display_options['fields']['field_files_collection']['bypass_access'] = 0;
   $handler->display->display_options['path'] = 'node/%/documents/csv';
   $handler->display->display_options['displays'] = array(
-    'list' => 'list',
-    'table' => 'table',
     'default' => 0,
+    'list' => 0,
+    'table' => 0,
   );
   $translatables['hr_documents'] = array(
     t('Master'),
@@ -197,7 +250,7 @@ function hr_documents_views_default_views() {
     t('There are no results'),
     t('Title'),
     t('Document type'),
-    t('Organizations'),
+    t('Organization'),
     t('Publication Date'),
     t('Files'),
     t('All'),

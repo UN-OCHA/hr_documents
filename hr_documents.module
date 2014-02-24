@@ -51,3 +51,6 @@ function hr_documents_og_features_toggle($entity, $entity_id, $entity_type, $fea
 
 }
 
+function hr_documents_form_hr_document_node_form_alter(&$form, &$form_state) {
+  hr_sectors_hide_sectors($form, $form_state);
+}
