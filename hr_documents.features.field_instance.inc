@@ -118,6 +118,48 @@ function hr_documents_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'fieldable_panels_pane-hr_documents-field_documents'
+  $field_instances['fieldable_panels_pane-hr_documents-field_documents'] = array(
+    'bundle' => 'hr_documents',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => 1,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'fieldable_panels_pane',
+    'field_name' => 'field_documents',
+    'label' => 'Documents',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 1,
+      ),
+      'type' => 'options_select',
+      'weight' => -4,
+    ),
+  );
+
   // Exported field_instance: 'node-hr_document-body'
   $field_instances['node-hr_document-body'] = array(
     'bundle' => 'hr_document',
@@ -1086,6 +1128,7 @@ function hr_documents_field_default_field_instances() {
   t('Description');
   t('Disasters');
   t('Document type');
+  t('Documents');
   t('File');
   t('File(s)');
   t('Funding methods');
