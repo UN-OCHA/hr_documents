@@ -26,7 +26,47 @@ function hr_documents_views_default_views() {
   $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
-  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
+  $handler->display->display_options['exposed_form']['options']['bef'] = array(
+    'general' => array(
+      'allow_secondary' => 0,
+      'secondary_label' => 'Advanced options',
+    ),
+    'sort' => array(
+      'bef_format' => 'bef_toggle_links',
+      'advanced' => array(
+        'collapsible' => 0,
+        'collapsible_label' => 'Sort options',
+        'combine' => 1,
+        'combine_rewrite' => 'Publication Date Asc|Oldest first
+Publication Date Desc|Newest first
+Relevance Asc|Most relevant
+Relevance Desc|Least relevant',
+        'reset' => 0,
+        'reset_label' => '',
+        'is_secondary' => 0,
+      ),
+      'mefibs_block_sort_bef' => 'sorts',
+    ),
+    'search_api_views_fulltext' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+  );
+  $handler->display->display_options['exposed_form']['options']['input_required'] = 0;
+  $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'panopoly_wysiwyg_text';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'entity';
@@ -38,11 +78,10 @@ function hr_documents_views_default_views() {
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['content'] = 'There are no results';
   $handler->display->display_options['empty']['area']['format'] = 'plain_text';
-  /* Field: Indexed Node: Name */
+  /* Field: Indexed Node: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'search_api_index_default_node_index';
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
-  $handler->display->display_options['fields']['title_field']['label'] = 'Title';
   $handler->display->display_options['fields']['title_field']['type'] = 'title_linked';
   $handler->display->display_options['fields']['title_field']['settings'] = array(
     'title_style' => '_none',
@@ -83,6 +122,19 @@ function hr_documents_views_default_views() {
   $handler->display->display_options['fields']['field_files_collection']['display'] = 'view';
   $handler->display->display_options['fields']['field_files_collection']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_files_collection']['bypass_access'] = 0;
+  /* Sort criterion: Indexed Node: Publication Date */
+  $handler->display->display_options['sorts']['field_publication_date']['id'] = 'field_publication_date';
+  $handler->display->display_options['sorts']['field_publication_date']['table'] = 'search_api_index_default_node_index';
+  $handler->display->display_options['sorts']['field_publication_date']['field'] = 'field_publication_date';
+  $handler->display->display_options['sorts']['field_publication_date']['order'] = 'DESC';
+  $handler->display->display_options['sorts']['field_publication_date']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['field_publication_date']['expose']['label'] = 'Publication Date';
+  /* Sort criterion: Search: Relevance */
+  $handler->display->display_options['sorts']['search_api_relevance']['id'] = 'search_api_relevance';
+  $handler->display->display_options['sorts']['search_api_relevance']['table'] = 'search_api_index_default_node_index';
+  $handler->display->display_options['sorts']['search_api_relevance']['field'] = 'search_api_relevance';
+  $handler->display->display_options['sorts']['search_api_relevance']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['search_api_relevance']['expose']['label'] = 'Relevance';
   /* Contextual filter: Indexed Node: Groups audience */
   $handler->display->display_options['arguments']['og_group_ref']['id'] = 'og_group_ref';
   $handler->display->display_options['arguments']['og_group_ref']['table'] = 'search_api_index_default_node_index';
@@ -126,6 +178,22 @@ function hr_documents_views_default_views() {
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'List';
   $handler->display->display_options['exposed_block'] = TRUE;
+  $handler->display->display_options['mefibs'] = array(
+    'blocks' => array(
+      0 => array(
+        'name' => 'Sorts',
+        'machine_name' => 'sorts',
+      ),
+    ),
+    'extras' => array(
+      'sort' => NULL,
+      'items_per_page' => NULL,
+    ),
+    'list' => array(
+      'sort_block' => 'sorts',
+      'filter' => array(),
+    ),
+  );
   $handler->display->display_options['pane_category']['name'] = 'Documents';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['allow']['use_pager'] = 0;
@@ -199,11 +267,10 @@ function hr_documents_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'views_data_export_csv';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Indexed Node: Name */
+  /* Field: Indexed Node: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'search_api_index_default_node_index';
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
-  $handler->display->display_options['fields']['title_field']['label'] = 'Title';
   $handler->display->display_options['fields']['title_field']['type'] = 'title_linked';
   $handler->display->display_options['fields']['title_field']['settings'] = array(
     'title_style' => '_none',
@@ -260,6 +327,7 @@ function hr_documents_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
+    t('Select any filter and click on Apply to see results'),
     t('Items per page'),
     t('- All -'),
     t('Offset'),
@@ -273,6 +341,7 @@ function hr_documents_views_default_views() {
     t('Organization'),
     t('Publication Date'),
     t('Files'),
+    t('Relevance'),
     t('All'),
     t('Search Documents'),
     t('List'),

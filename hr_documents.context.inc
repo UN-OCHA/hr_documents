@@ -75,6 +75,12 @@ function hr_documents_context_default_contexts() {
           'region' => 'sidebar_first',
           'weight' => '-3',
         ),
+        'mefibs-0d63fcbd2ae5d83a24c4fdf04aa84205' => array(
+          'module' => 'mefibs',
+          'delta' => '0d63fcbd2ae5d83a24c4fdf04aa84205',
+          'region' => 'sidebar_first',
+          'weight' => '-2',
+        ),
       ),
     ),
   );
