@@ -95,7 +95,7 @@ Relevance Desc|Least relevant',
   $handler->display->display_options['fields']['field_document_type']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['field_document_type']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_document_type']['bypass_access'] = 0;
-  /* Field: Indexed Node: Organizations */
+  /* Field: Indexed Node: Organization */
   $handler->display->display_options['fields']['field_organizations']['id'] = 'field_organizations';
   $handler->display->display_options['fields']['field_organizations']['table'] = 'search_api_index_default_node_index';
   $handler->display->display_options['fields']['field_organizations']['field'] = 'field_organizations';
@@ -284,7 +284,7 @@ Relevance Desc|Least relevant',
   $handler->display->display_options['fields']['field_document_type']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['field_document_type']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_document_type']['bypass_access'] = 0;
-  /* Field: Indexed Node: Organizations */
+  /* Field: Indexed Node: Organization */
   $handler->display->display_options['fields']['field_organizations']['id'] = 'field_organizations';
   $handler->display->display_options['fields']['field_organizations']['table'] = 'search_api_index_default_node_index';
   $handler->display->display_options['fields']['field_organizations']['field'] = 'field_organizations';
@@ -338,7 +338,7 @@ Relevance Desc|Least relevant',
     t('There are no results'),
     t('Title'),
     t('Document type'),
-    t('Organizations'),
+    t('Organization'),
     t('Publication Date'),
     t('Files'),
     t('Relevance'),
@@ -446,6 +446,37 @@ Relevance Desc|Least relevant',
 
   /* Display: List */
   $handler = $view->new_display('panel_pane', 'List', 'list');
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'hr_document' => 'hr_document',
+  );
+  /* Filter criterion: Content: Document type (field_document_type) */
+  $handler->display->display_options['filters']['field_document_type_target_id']['id'] = 'field_document_type_target_id';
+  $handler->display->display_options['filters']['field_document_type_target_id']['table'] = 'field_data_field_document_type';
+  $handler->display->display_options['filters']['field_document_type_target_id']['field'] = 'field_document_type_target_id';
+  $handler->display->display_options['filters']['field_document_type_target_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_document_type_target_id']['expose']['operator_id'] = 'field_document_type_target_id_op';
+  $handler->display->display_options['filters']['field_document_type_target_id']['expose']['label'] = 'Document type';
+  $handler->display->display_options['filters']['field_document_type_target_id']['expose']['operator'] = 'field_document_type_target_id_op';
+  $handler->display->display_options['filters']['field_document_type_target_id']['expose']['identifier'] = 'field_document_type_target_id';
+  $handler->display->display_options['filters']['field_document_type_target_id']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_document_type_target_id']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    30037204 => 0,
+  );
   $handler->display->display_options['pane_title'] = 'Documents per space';
   $handler->display->display_options['pane_category']['name'] = 'Documents';
   $handler->display->display_options['pane_category']['weight'] = '0';
@@ -573,6 +604,7 @@ Relevance Desc|Least relevant',
     t('Title'),
     t('All'),
     t('List'),
+    t('Document type'),
     t('Documents per space'),
     t('Documents'),
     t('Thumbnail'),
