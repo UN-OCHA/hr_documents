@@ -199,6 +199,11 @@ function hr_documents_feeds_importer_default() {
             'unique' => FALSE,
           ),
           17 => array(
+            'source' => 'Post date',
+            'target' => 'created',
+            'unique' => FALSE,
+          ),
+          18 => array(
             'source' => 'Author',
             'target' => 'user_mail',
             'unique' => FALSE,
