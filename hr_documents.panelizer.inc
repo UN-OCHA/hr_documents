@@ -489,11 +489,11 @@ function hr_documents_panelizer_defaults() {
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'override_title' => FALSE,
+      'override_title' => 0,
       'override_title_text' => '',
-      'build_mode' => 'default',
+      'build_mode' => 'full',
       'identifier' => '',
-      'link' => TRUE,
+      'link' => 1,
       'context' => 'panelizer',
     );
     $pane->cache = array();
@@ -509,6 +509,30 @@ function hr_documents_panelizer_defaults() {
     $pane->uuid = '18dae13d-725c-48e4-949b-26c94614cf07';
     $display->content['new-18dae13d-725c-48e4-949b-26c94614cf07'] = $pane;
     $display->panels['center'][15] = 'new-18dae13d-725c-48e4-949b-26c94614cf07';
+    $pane = new stdClass();
+    $pane->pid = 'new-1af0a221-17ac-4055-8646-8570f233d1f0';
+    $pane->panel = 'center';
+    $pane->type = 'entity_field_extra';
+    $pane->subtype = 'node:hr_core_share_button';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'full',
+      'context' => 'panelizer',
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 16;
+    $pane->locks = array();
+    $pane->uuid = '1af0a221-17ac-4055-8646-8570f233d1f0';
+    $display->content['new-1af0a221-17ac-4055-8646-8570f233d1f0'] = $pane;
+    $display->panels['center'][16] = 'new-1af0a221-17ac-4055-8646-8570f233d1f0';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-18dae13d-725c-48e4-949b-26c94614cf07';
   $panelizer->display = $display;
@@ -683,6 +707,30 @@ function hr_documents_panelizer_defaults() {
     $display->content['new-106c9a69-3fd4-46ae-8416-68ad95c2a463'] = $pane;
     $display->panels['right'][2] = 'new-106c9a69-3fd4-46ae-8416-68ad95c2a463';
     $pane = new stdClass();
+    $pane->pid = 'new-a0ca7cda-e33d-48d0-81a0-5cec828a5c74';
+    $pane->panel = 'right';
+    $pane->type = 'entity_field_extra';
+    $pane->subtype = 'node:hr_core_share_button';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'full',
+      'context' => 'panelizer',
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = 'a0ca7cda-e33d-48d0-81a0-5cec828a5c74';
+    $display->content['new-a0ca7cda-e33d-48d0-81a0-5cec828a5c74'] = $pane;
+    $display->panels['right'][3] = 'new-a0ca7cda-e33d-48d0-81a0-5cec828a5c74';
+    $pane = new stdClass();
     $pane->pid = 'new-f7f31cb8-1e60-4a7b-860b-5b078cc1cf30';
     $pane->panel = 'right';
     $pane->type = 'entity_field';
@@ -712,11 +760,11 @@ function hr_documents_panelizer_defaults() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 3;
+    $pane->position = 4;
     $pane->locks = array();
     $pane->uuid = 'f7f31cb8-1e60-4a7b-860b-5b078cc1cf30';
     $display->content['new-f7f31cb8-1e60-4a7b-860b-5b078cc1cf30'] = $pane;
-    $display->panels['right'][3] = 'new-f7f31cb8-1e60-4a7b-860b-5b078cc1cf30';
+    $display->panels['right'][4] = 'new-f7f31cb8-1e60-4a7b-860b-5b078cc1cf30';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-34a09403-e834-46d6-99bc-64a1c989dec0';
   $panelizer->display = $display;
