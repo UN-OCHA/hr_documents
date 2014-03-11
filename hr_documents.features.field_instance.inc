@@ -224,7 +224,7 @@ function hr_documents_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 12,
+      'weight' => 13,
     ),
   );
 
@@ -569,6 +569,63 @@ function hr_documents_field_default_field_instances() {
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
+      'weight' => 11,
+    ),
+  );
+
+  // Exported field_instance: 'node-hr_document-field_funding_types'
+  $field_instances['node-hr_document-field_funding_types'] = array(
+    'bundle' => 'hr_document',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 16,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_funding_types',
+    'label' => 'Funding Types',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+        'taxonomy-index' => array(
+          'status' => TRUE,
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 1,
+      ),
+      'type' => 'options_select',
       'weight' => 10,
     ),
   );
@@ -705,6 +762,7 @@ function hr_documents_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_repeat_rule' => 'show',
         ),
         'type' => 'date_default',
         'weight' => 11,
@@ -718,6 +776,7 @@ function hr_documents_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_repeat_rule' => 'show',
         ),
         'type' => 'date_default',
         'weight' => 1,
@@ -746,10 +805,12 @@ function hr_documents_field_default_field_instances() {
       'module' => 'date',
       'settings' => array(
         'apply_chosen' => 0,
+        'display_all_day' => 0,
         'increment' => 15,
         'input_format' => 'm/d/Y - H:i:s',
         'input_format_custom' => '',
         'label_position' => 'above',
+        'repeat_collapsed' => 0,
         'text_parts' => array(),
         'year_range' => '-10:+0',
       ),
@@ -819,7 +880,7 @@ function hr_documents_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 13,
+      'weight' => 14,
     ),
   );
 
@@ -930,7 +991,7 @@ function hr_documents_field_default_field_instances() {
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 11,
+      'weight' => 12,
     ),
   );
 
@@ -1006,7 +1067,7 @@ function hr_documents_field_default_field_instances() {
       'module' => 'og',
       'settings' => array(),
       'type' => 'og_complex',
-      'weight' => 14,
+      'weight' => 15,
     ),
   );
 
@@ -1151,6 +1212,7 @@ function hr_documents_field_default_field_instances() {
   t('Documents');
   t('File');
   t('File(s)');
+  t('Funding Types');
   t('Funding methods');
   t('Groups audience');
   t('Language');
