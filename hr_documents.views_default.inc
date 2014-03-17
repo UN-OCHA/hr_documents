@@ -69,6 +69,7 @@ Relevance Desc|Least relevant',
   $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'panopoly_wysiwyg_text';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'clearfix';
   $handler->display->display_options['row_plugin'] = 'entity';
   $handler->display->display_options['row_options']['view_mode'] = 'search_result';
   /* No results behavior: Global: Text area */
@@ -78,7 +79,7 @@ Relevance Desc|Least relevant',
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['content'] = 'There are no results';
   $handler->display->display_options['empty']['area']['format'] = 'plain_text';
-  /* Field: Indexed Node: Name */
+  /* Field: Indexed Node: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'search_api_index_default_node_index';
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
@@ -95,7 +96,7 @@ Relevance Desc|Least relevant',
   $handler->display->display_options['fields']['field_document_type']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['field_document_type']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_document_type']['bypass_access'] = 0;
-  /* Field: Indexed Node: Lead Agencies */
+  /* Field: Indexed Node: Organization */
   $handler->display->display_options['fields']['field_organizations']['id'] = 'field_organizations';
   $handler->display->display_options['fields']['field_organizations']['table'] = 'search_api_index_default_node_index';
   $handler->display->display_options['fields']['field_organizations']['field'] = 'field_organizations';
@@ -267,7 +268,7 @@ Relevance Desc|Least relevant',
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'views_data_export_csv';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Indexed Node: Name */
+  /* Field: Indexed Node: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'search_api_index_default_node_index';
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
@@ -284,7 +285,7 @@ Relevance Desc|Least relevant',
   $handler->display->display_options['fields']['field_document_type']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['field_document_type']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_document_type']['bypass_access'] = 0;
-  /* Field: Indexed Node: Lead Agencies */
+  /* Field: Indexed Node: Organization */
   $handler->display->display_options['fields']['field_organizations']['id'] = 'field_organizations';
   $handler->display->display_options['fields']['field_organizations']['table'] = 'search_api_index_default_node_index';
   $handler->display->display_options['fields']['field_organizations']['field'] = 'field_organizations';
@@ -336,9 +337,9 @@ Relevance Desc|Least relevant',
     t('next ›'),
     t('last »'),
     t('There are no results'),
-    t('Name'),
+    t('Title'),
     t('Document type'),
-    t('Lead Agencies'),
+    t('Organization'),
     t('Publication Date'),
     t('Files'),
     t('Relevance'),
