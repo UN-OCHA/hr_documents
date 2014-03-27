@@ -1040,10 +1040,10 @@ function hr_documents_field_default_field_instances() {
         ),
         'prepopulate' => array(
           'action' => 'disable',
-          'action_on_edit' => 0,
           'fallback' => 'form_error',
-          'og_context' => 0,
-          'skip_perm' => 0,
+          'providers' => array(
+            'url' => 1,
+          ),
           'status' => 1,
         ),
       ),
