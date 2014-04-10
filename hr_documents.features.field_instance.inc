@@ -916,7 +916,7 @@ function hr_documents_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_sectors',
-    'label' => 'Sectors',
+    'label' => 'Global Clusters',
     'required' => 0,
     'settings' => array(
       'behaviors' => array(
