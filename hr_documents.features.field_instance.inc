@@ -1214,6 +1214,7 @@ function hr_documents_field_default_field_instances() {
   t('File(s)');
   t('Funding Types');
   t('Funding methods');
+  t('Global Clusters');
   t('Groups audience');
   t('Language');
   t('Locations');
@@ -1221,7 +1222,6 @@ function hr_documents_field_default_field_instances() {
   t('Organization');
   t('Publication Date');
   t('Related content');
-  t('Sectors');
   t('Themes');
   t('Title');
 
