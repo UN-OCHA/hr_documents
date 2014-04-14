@@ -40,6 +40,7 @@ dependencies[] = panelizer
 dependencies[] = panels_bootstrap_layouts
 dependencies[] = panels_bootstrap_styles
 dependencies[] = pdfpreview
+dependencies[] = radix_layouts
 dependencies[] = search_api_autocomplete
 dependencies[] = strongarm
 dependencies[] = taxonomy

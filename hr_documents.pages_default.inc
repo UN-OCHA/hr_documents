@@ -66,7 +66,7 @@ function hr_documents_default_page_manager_pages() {
     ),
   );
   $display = new panels_display();
-  $display->layout = 'onecol';
+  $display->layout = 'radix_boxton';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -80,6 +80,9 @@ function hr_documents_default_page_manager_pages() {
       'middle' => array(
         'region_title' => '',
       ),
+      'contentmain' => array(
+        'region_title' => '',
+      ),
     ),
     'bottom' => array(
       'style' => 'naked',
@@ -90,6 +93,9 @@ function hr_documents_default_page_manager_pages() {
     'middle' => array(
       'style' => 'bootstrap_styles:tabs',
     ),
+    'contentmain' => array(
+      'style' => 'bootstrap_styles:tabs',
+    ),
   );
   $display->cache = array();
   $display->title = '';
@@ -98,7 +104,7 @@ function hr_documents_default_page_manager_pages() {
   $display->panels = array();
     $pane = new stdClass();
     $pane->pid = 'new-9774914b-f7af-4764-a054-e3095a427233';
-    $pane->panel = 'middle';
+    $pane->panel = 'contentmain';
     $pane->type = 'views_panes';
     $pane->subtype = 'hr_documents-list';
     $pane->shown = TRUE;
@@ -120,10 +126,10 @@ function hr_documents_default_page_manager_pages() {
     $pane->locks = array();
     $pane->uuid = '9774914b-f7af-4764-a054-e3095a427233';
     $display->content['new-9774914b-f7af-4764-a054-e3095a427233'] = $pane;
-    $display->panels['middle'][0] = 'new-9774914b-f7af-4764-a054-e3095a427233';
+    $display->panels['contentmain'][0] = 'new-9774914b-f7af-4764-a054-e3095a427233';
     $pane = new stdClass();
     $pane->pid = 'new-297f0e76-1752-4589-82cf-12ccd400c206';
-    $pane->panel = 'middle';
+    $pane->panel = 'contentmain';
     $pane->type = 'views_panes';
     $pane->subtype = 'hr_documents-table';
     $pane->shown = TRUE;
@@ -145,7 +151,7 @@ function hr_documents_default_page_manager_pages() {
     $pane->locks = array();
     $pane->uuid = '297f0e76-1752-4589-82cf-12ccd400c206';
     $display->content['new-297f0e76-1752-4589-82cf-12ccd400c206'] = $pane;
-    $display->panels['middle'][1] = 'new-297f0e76-1752-4589-82cf-12ccd400c206';
+    $display->panels['contentmain'][1] = 'new-297f0e76-1752-4589-82cf-12ccd400c206';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
