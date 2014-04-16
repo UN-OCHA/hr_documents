@@ -26,10 +26,10 @@ function hr_documents_strongarm() {
           'weight' => '-5',
         ),
         'path' => array(
-          'weight' => '16',
+          'weight' => '17',
         ),
         'redirect' => array(
-          'weight' => '17',
+          'weight' => '18',
         ),
       ),
       'display' => array(),
