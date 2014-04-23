@@ -453,11 +453,17 @@ function hr_documents_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
+      'module' => 'shs',
       'settings' => array(
-        'apply_chosen' => 1,
+        'shs' => array(
+          'create_new_levels' => 0,
+          'create_new_terms' => 0,
+          'force_deepest' => 0,
+          'node_count' => 0,
+          'use_chosen' => 'always',
+        ),
       ),
-      'type' => 'options_select',
+      'type' => 'taxonomy_shs',
       'weight' => 1,
     ),
   );
