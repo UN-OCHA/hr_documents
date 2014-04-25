@@ -188,7 +188,7 @@ function hr_documents_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'above',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
@@ -684,11 +684,17 @@ function hr_documents_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'hser',
+      'module' => 'shs',
       'settings' => array(
-        'editable' => 0,
+        'shs' => array(
+          'create_new_levels' => 0,
+          'create_new_terms' => 0,
+          'force_deepest' => 0,
+          'node_count' => 0,
+          'use_chosen' => 'always',
+        ),
       ),
-      'type' => 'hser_hierarchy',
+      'type' => 'taxonomy_shs',
       'weight' => 6,
     ),
   );
@@ -1071,9 +1077,8 @@ function hr_documents_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'og_ui',
         'settings' => array(),
-        'type' => 'og_list_default',
+        'type' => 'hidden',
         'weight' => 0,
       ),
       'search_result' => array(
