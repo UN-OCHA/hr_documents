@@ -17,19 +17,106 @@ function hr_documents_context_default_contexts() {
   $context->description = 'Documents page per space';
   $context->tag = 'Documents';
   $context->conditions = array(
-    'path' => array(
+    'views' => array(
       'values' => array(
-        'node/*/documents' => 'node/*/documents',
-        'node/*/documents/*' => 'node/*/documents/*',
+        'hr_documents:list' => 'hr_documents:list',
+        'hr_documents:master' => 'hr_documents:master',
       ),
     ),
   );
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views--exp-hr_documents-list' => array(
+        'views--exp-hr_documents-master' => array(
           'module' => 'views',
-          'delta' => '-exp-hr_documents-list',
+          'delta' => '-exp-hr_documents-master',
+          'region' => 'branding',
+          'weight' => '-9',
+        ),
+        'current_search-hr_current_search' => array(
+          'module' => 'current_search',
+          'delta' => 'hr_current_search',
+          'region' => 'sidebar_first',
+          'weight' => '-10',
+        ),
+        'facetapi-2VJqM7IlPMSIoTIQrsoqy1dgG563hXbS' => array(
+          'module' => 'facetapi',
+          'delta' => '2VJqM7IlPMSIoTIQrsoqy1dgG563hXbS',
+          'region' => 'sidebar_first',
+          'weight' => '-9',
+        ),
+        'facetapi-ZXNTNWz3w05hh3aLGFw0ofPRZUa5biIZ' => array(
+          'module' => 'facetapi',
+          'delta' => 'ZXNTNWz3w05hh3aLGFw0ofPRZUa5biIZ',
+          'region' => 'sidebar_first',
+          'weight' => '-8',
+        ),
+        'facetapi-sp6ljjoCBKBVws0uia1DCKcDmln6TeUq' => array(
+          'module' => 'facetapi',
+          'delta' => 'sp6ljjoCBKBVws0uia1DCKcDmln6TeUq',
+          'region' => 'sidebar_first',
+          'weight' => '-7',
+        ),
+        'facetapi-w7XuwcVu1l6DNu4aCenMydri96KBLxYh' => array(
+          'module' => 'facetapi',
+          'delta' => 'w7XuwcVu1l6DNu4aCenMydri96KBLxYh',
+          'region' => 'sidebar_first',
+          'weight' => '-6',
+        ),
+        'facetapi-uulIYjH3ZtSu9hhI5ARgBYQeEUNqWe17' => array(
+          'module' => 'facetapi',
+          'delta' => 'uulIYjH3ZtSu9hhI5ARgBYQeEUNqWe17',
+          'region' => 'sidebar_first',
+          'weight' => '-5',
+        ),
+        'facetapi-9GGN5HfHaQpjLAfMWHJknvdGmR74ha9v' => array(
+          'module' => 'facetapi',
+          'delta' => '9GGN5HfHaQpjLAfMWHJknvdGmR74ha9v',
+          'region' => 'sidebar_first',
+          'weight' => '-4',
+        ),
+        'facetapi-SEcKjZK5tfurGpvrhp6Z9y3447HT7e2S' => array(
+          'module' => 'facetapi',
+          'delta' => 'SEcKjZK5tfurGpvrhp6Z9y3447HT7e2S',
+          'region' => 'sidebar_first',
+          'weight' => '-3',
+        ),
+        'mefibs-f60ca5475923b382b17f25bacd951020' => array(
+          'module' => 'mefibs',
+          'delta' => 'f60ca5475923b382b17f25bacd951020',
+          'region' => 'sidebar_first',
+          'weight' => '-1',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Documents');
+  t('Documents page per space');
+  $export['hr_documents_space'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'hr_documents_space_table';
+  $context->description = 'Documents table per space';
+  $context->tag = 'Documents';
+  $context->conditions = array(
+    'views' => array(
+      'values' => array(
+        'hr_documents:table' => 'hr_documents:table',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'views--exp-hr_documents-table' => array(
+          'module' => 'views',
+          'delta' => '-exp-hr_documents-table',
           'region' => 'branding',
           'weight' => '-10',
         ),
@@ -81,9 +168,9 @@ function hr_documents_context_default_contexts() {
           'region' => 'sidebar_first',
           'weight' => '-3',
         ),
-        'mefibs-0d63fcbd2ae5d83a24c4fdf04aa84205' => array(
+        'mefibs-cb36542f8cbee0b937d0082cdfdf1ce9' => array(
           'module' => 'mefibs',
-          'delta' => '0d63fcbd2ae5d83a24c4fdf04aa84205',
+          'delta' => 'cb36542f8cbee0b937d0082cdfdf1ce9',
           'region' => 'sidebar_first',
           'weight' => '-2',
         ),
@@ -95,8 +182,8 @@ function hr_documents_context_default_contexts() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Documents');
-  t('Documents page per space');
-  $export['hr_documents_space'] = $context;
+  t('Documents table per space');
+  $export['hr_documents_space_table'] = $context;
 
   return $export;
 }
