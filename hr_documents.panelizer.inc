@@ -581,7 +581,7 @@ function hr_documents_panelizer_defaults() {
       'delta_offset' => '0',
       'delta_reversed' => FALSE,
       'formatter_settings' => array(
-        'format_type' => 'short',
+        'format_type' => 'hr_1',
         'multiple_number' => '',
         'multiple_from' => '',
         'multiple_to' => '',
