@@ -1096,7 +1096,7 @@ function hr_documents_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'og_group_ref',
-    'label' => 'Primary space',
+    'label' => 'Space(s)',
     'required' => 1,
     'settings' => array(
       'behaviors' => array(
@@ -1110,11 +1110,11 @@ function hr_documents_field_default_field_instances() {
           'status' => TRUE,
         ),
         'prepopulate' => array(
-          'action' => 'disable',
+          'action' => 'none',
+          'action_on_edit' => 0,
           'fallback' => 'form_error',
-          'providers' => array(
-            'url' => 1,
-          ),
+          'og_context' => 0,
+          'skip_perm' => 0,
           'status' => 1,
         ),
       ),
@@ -1287,13 +1287,13 @@ function hr_documents_field_default_field_instances() {
   t('Funding methods');
   t('Global Clusters');
   t('Group content visibility');
-  t('Groups audience');
   t('Language');
   t('Locations');
   t('Name');
   t('Organization');
   t('Publication Date');
   t('Related content');
+  t('Space(s)');
   t('Themes');
   t('Title');
 
