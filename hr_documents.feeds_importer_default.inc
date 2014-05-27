@@ -116,7 +116,7 @@ function hr_documents_feeds_importer_default() {
           0 => array(
             'source' => 'Title',
             'target' => 'title',
-            'unique' => 1,
+            'unique' => 0,
           ),
           1 => array(
             'source' => 'Title:en',
@@ -134,87 +134,97 @@ function hr_documents_feeds_importer_default() {
             'unique' => FALSE,
           ),
           4 => array(
+            'source' => 'Description',
+            'target' => 'body:et:und',
+            'unique' => FALSE,
+          ),
+          5 => array(
+            'source' => 'Description',
+            'target' => 'body:et:en',
+            'unique' => FALSE,
+          ),
+          6 => array(
             'source' => 'Type',
             'target' => 'field_document_type:label',
             'unique' => FALSE,
           ),
-          5 => array(
+          7 => array(
             'source' => 'File',
             'target' => 'field_files_collection:field_file',
             'unique' => FALSE,
           ),
-          6 => array(
+          8 => array(
             'source' => 'Language',
             'target' => 'field_files_collection:field_language',
             'unique' => FALSE,
           ),
-          7 => array(
+          9 => array(
             'source' => 'Sectors',
             'target' => 'field_sectors:label',
             'unique' => FALSE,
           ),
-          8 => array(
+          10 => array(
             'source' => 'Clusters/Sectors',
             'target' => 'field_bundles:label',
             'unique' => FALSE,
           ),
-          9 => array(
+          11 => array(
             'source' => 'Publication Date',
             'target' => 'field_publication_date:start',
             'unique' => FALSE,
           ),
-          10 => array(
+          12 => array(
             'source' => 'Organization',
             'target' => 'field_organizations:label',
             'unique' => FALSE,
           ),
-          11 => array(
+          13 => array(
             'source' => 'Coordination hubs',
             'target' => 'field_coordination_hubs:label',
             'unique' => FALSE,
           ),
-          12 => array(
+          14 => array(
             'source' => 'Locations',
             'target' => 'field_locations:label',
             'unique' => FALSE,
           ),
-          13 => array(
+          15 => array(
             'source' => 'Fundings',
             'target' => 'field_funding_methods:label',
             'unique' => FALSE,
           ),
-          14 => array(
+          16 => array(
             'source' => 'Themes',
             'target' => 'field_themes:label',
             'unique' => FALSE,
           ),
-          15 => array(
+          17 => array(
             'source' => 'Disasters',
             'target' => 'field_disasters:label',
             'unique' => FALSE,
           ),
-          16 => array(
-            'source' => 'Space',
+          18 => array(
+            'source' => 'Spaces',
             'target' => 'og_group_ref:label',
             'unique' => FALSE,
           ),
-          17 => array(
+          19 => array(
             'source' => 'Post date',
             'target' => 'created',
             'unique' => FALSE,
           ),
-          18 => array(
+          20 => array(
             'source' => 'Author',
             'target' => 'user_mail',
             'unique' => FALSE,
           ),
-          19 => array(
+          21 => array(
             'source' => 'Path',
             'target' => 'path_alias',
             'pathauto_override' => 1,
           ),
         ),
-        'update_existing' => '2',
+        'update_existing' => '0',
         'input_format' => 'plain_text',
         'skip_hash_check' => 0,
         'bundle' => 'hr_document',
