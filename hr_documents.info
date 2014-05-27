@@ -69,6 +69,7 @@ features[feeds_tamper][] = hr_documents-fundings-explode
 features[feeds_tamper][] = hr_documents-locations-explode
 features[feeds_tamper][] = hr_documents-organization-explode
 features[feeds_tamper][] = hr_documents-sectors-explode
+features[feeds_tamper][] = hr_documents-spaces-explode
 features[feeds_tamper][] = hr_documents-themes-explode
 features[field_base][] = field_document_type
 features[field_base][] = field_documents
