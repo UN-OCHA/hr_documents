@@ -208,6 +208,11 @@ function hr_documents_feeds_importer_default() {
             'target' => 'user_mail',
             'unique' => FALSE,
           ),
+          19 => array(
+            'source' => 'Path',
+            'target' => 'path_alias',
+            'pathauto_override' => 1,
+          ),
         ),
         'update_existing' => '2',
         'input_format' => 'plain_text',
