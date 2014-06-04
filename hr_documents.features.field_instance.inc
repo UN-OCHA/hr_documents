@@ -121,7 +121,7 @@ function hr_documents_field_default_field_instances() {
   // Exported field_instance: 'fieldable_panels_pane-hr_documents-field_documents'
   $field_instances['fieldable_panels_pane-hr_documents-field_documents'] = array(
     'bundle' => 'hr_documents',
-    'default_value' => NULL,
+    'default_value' => array(),
     'default_value_function' => '',
     'deleted' => 0,
     'description' => '',
@@ -171,11 +171,14 @@ function hr_documents_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
+      'module' => 'entityreference',
       'settings' => array(
         'apply_chosen' => 1,
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
       ),
-      'type' => 'options_select',
+      'type' => 'entityreference_autocomplete',
       'weight' => -4,
     ),
   );
