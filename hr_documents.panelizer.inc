@@ -765,7 +765,7 @@ function hr_documents_panelizer_defaults() {
   $panelizer->access = array();
   $panelizer->view_mode = 'teaser';
   $panelizer->css_class = '';
-  $panelizer->title_element = 'H2';
+  $panelizer->title_element = 'H4';
   $panelizer->link_to_entity = TRUE;
   $panelizer->extra = array();
   $display = new panels_display();
