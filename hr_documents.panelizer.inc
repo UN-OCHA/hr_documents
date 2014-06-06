@@ -779,6 +779,7 @@ function hr_documents_panelizer_defaults() {
       'left' => NULL,
       'right' => NULL,
       'bottom' => NULL,
+      'contentmain' => NULL,
     ),
   );
   $display->cache = array();
@@ -809,7 +810,34 @@ function hr_documents_panelizer_defaults() {
     $pane->uuid = 'a6d6044f-229c-494e-b8f6-e892449ba0e2';
     $display->content['new-a6d6044f-229c-494e-b8f6-e892449ba0e2'] = $pane;
     $display->panels['contentmain'][0] = 'new-a6d6044f-229c-494e-b8f6-e892449ba0e2';
-  $display->hide_title = PANELS_TITLE_FIXED;
+    $pane = new stdClass();
+    $pane->pid = 'new-5b640a71-32c8-41f8-9780-4778d2e7d437';
+    $pane->panel = 'contentmain';
+    $pane->type = 'node_title';
+    $pane->subtype = 'node_title';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'link' => 1,
+      'markup' => 'none',
+      'id' => '',
+      'class' => '',
+      'context' => 'panelizer',
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '5b640a71-32c8-41f8-9780-4778d2e7d437';
+    $display->content['new-5b640a71-32c8-41f8-9780-4778d2e7d437'] = $pane;
+    $display->panels['contentmain'][1] = 'new-5b640a71-32c8-41f8-9780-4778d2e7d437';
+  $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $panelizer->display = $display;
   $export['node:hr_document:default:teaser'] = $panelizer;
