@@ -168,5 +168,6 @@ features[variable][] = node_preview_hr_document
 features[variable][] = node_submitted_hr_document
 features[variable][] = panelizer_defaults_node_hr_document
 features[variable][] = pathauto_node_hr_document_pattern
+features[variable][] = publishcontent_hr_document
 features[views_view][] = hr_documents
 features[views_view][] = hr_documents_panes

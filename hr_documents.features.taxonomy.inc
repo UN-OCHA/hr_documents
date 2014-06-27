@@ -13,7 +13,7 @@ function hr_documents_taxonomy_default_vocabularies() {
       'name' => 'Document Type',
       'machine_name' => 'hr_document_type',
       'description' => '',
-      'hierarchy' => 0,
+      'hierarchy' => 1,
       'module' => 'taxonomy',
       'weight' => 0,
     ),
