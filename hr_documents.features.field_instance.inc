@@ -1115,7 +1115,7 @@ function hr_documents_field_default_field_instances() {
         'prepopulate' => array(
           'action' => 'none',
           'action_on_edit' => 0,
-          'fallback' => 'form_error',
+          'fallback' => 'none',
           'og_context' => 0,
           'skip_perm' => 0,
           'status' => 1,
