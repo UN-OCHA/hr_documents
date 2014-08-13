@@ -55,23 +55,3 @@ function hr_documents_node_info() {
   return $items;
 }
 
-/**
- * Implements hook_default_search_api_autocomplete_search().
- */
-function hr_documents_default_search_api_autocomplete_search() {
-  $items = array();
-  $items['search_api_views_hr_documents'] = entity_import('search_api_autocomplete_search', '{
-    "machine_name" : "search_api_views_hr_documents",
-    "name" : "Documents",
-    "index_id" : "default_node_index",
-    "type" : "search_api_views",
-    "enabled" : "1",
-    "options" : {
-      "result count" : true,
-      "fields" : [],
-      "results" : 1,
-      "custom" : { "display" : "default" }
-    }
-  }');
-  return $items;
-}

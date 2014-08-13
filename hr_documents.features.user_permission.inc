@@ -37,15 +37,5 @@ function hr_documents_user_default_permissions() {
     'module' => 'fieldable_panels_panes',
   );
 
-  // Exported permission: 'use search_api_autocomplete for search_api_views_hr_documents'.
-  $permissions['use search_api_autocomplete for search_api_views_hr_documents'] = array(
-    'name' => 'use search_api_autocomplete for search_api_views_hr_documents',
-    'roles' => array(
-      'anonymous user' => 'anonymous user',
-      'authenticated user' => 'authenticated user',
-    ),
-    'module' => 'search_api_autocomplete',
-  );
-
   return $permissions;
 }
