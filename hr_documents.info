@@ -153,6 +153,7 @@ features[taxonomy][] = hr_document_type
 features[user_permission][] = create fieldable hr_documents
 features[user_permission][] = delete fieldable hr_documents
 features[user_permission][] = edit fieldable hr_documents
+features[variable][] = entity_translation_settings_node__hr_document
 features[variable][] = field_bundle_settings_node__hr_document
 features[variable][] = language_content_type_hr_document
 features[variable][] = menu_options_hr_document
