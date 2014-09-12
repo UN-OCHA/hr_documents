@@ -13,6 +13,7 @@ function hr_documents_field_default_field_instances() {
   // Exported field_instance: 'field_collection_item-field_files_collection-field_file'
   $field_instances['field_collection_item-field_files_collection-field_file'] = array(
     'bundle' => 'field_files_collection',
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
