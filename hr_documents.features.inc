@@ -54,4 +54,3 @@ function hr_documents_node_info() {
   );
   return $items;
 }
-

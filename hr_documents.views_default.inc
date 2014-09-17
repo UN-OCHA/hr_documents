@@ -56,7 +56,7 @@ function hr_documents_views_default_views() {
   $handler->display->display_options['fields']['field_document_type']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['field_document_type']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_document_type']['bypass_access'] = 0;
-  /* Field: Indexed Node: Organizations */
+  /* Field: Indexed Node: Organization */
   $handler->display->display_options['fields']['field_organizations']['id'] = 'field_organizations';
   $handler->display->display_options['fields']['field_organizations']['table'] = 'search_api_index_default_node_index';
   $handler->display->display_options['fields']['field_organizations']['field'] = 'field_organizations';
@@ -223,7 +223,7 @@ function hr_documents_views_default_views() {
   $handler->display->display_options['fields']['field_document_type']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['field_document_type']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_document_type']['bypass_access'] = 0;
-  /* Field: Indexed Node: Organizations */
+  /* Field: Indexed Node: Organization */
   $handler->display->display_options['fields']['field_organizations']['id'] = 'field_organizations';
   $handler->display->display_options['fields']['field_organizations']['table'] = 'search_api_index_default_node_index';
   $handler->display->display_options['fields']['field_organizations']['field'] = 'field_organizations';
@@ -266,7 +266,6 @@ function hr_documents_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-    t('Select any filter and click on Apply to see results'),
     t('Items per page'),
     t('- All -'),
     t('Offset'),
@@ -277,10 +276,9 @@ function hr_documents_views_default_views() {
     t('There are no results'),
     t('Title'),
     t('Document type'),
-    t('Organizations'),
+    t('Organization'),
     t('Publication Date'),
     t('Files'),
-    t('Relevance'),
     t('All'),
     t('Search Documents'),
     t('List'),
@@ -467,21 +465,27 @@ function hr_documents_views_default_views() {
     1 => 0,
     30037204 => 0,
   );
-  /* Filter criterion: Content: Themes (field_themes) */
-  $handler->display->display_options['filters']['field_themes_target_id']['id'] = 'field_themes_target_id';
-  $handler->display->display_options['filters']['field_themes_target_id']['table'] = 'field_data_field_themes';
-  $handler->display->display_options['filters']['field_themes_target_id']['field'] = 'field_themes_target_id';
-  $handler->display->display_options['filters']['field_themes_target_id']['group'] = 1;
-  $handler->display->display_options['filters']['field_themes_target_id']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_themes_target_id']['expose']['operator_id'] = 'field_themes_target_id_op';
-  $handler->display->display_options['filters']['field_themes_target_id']['expose']['label'] = 'Themes';
-  $handler->display->display_options['filters']['field_themes_target_id']['expose']['operator'] = 'field_themes_target_id_op';
-  $handler->display->display_options['filters']['field_themes_target_id']['expose']['identifier'] = 'field_themes_target_id';
-  $handler->display->display_options['filters']['field_themes_target_id']['expose']['remember_roles'] = array(
+  /* Filter criterion: Field: Themes (field_themes) (reference filter) */
+  $handler->display->display_options['filters']['field_themes_target_id_entityreference_filter']['id'] = 'field_themes_target_id_entityreference_filter';
+  $handler->display->display_options['filters']['field_themes_target_id_entityreference_filter']['table'] = 'field_data_field_themes';
+  $handler->display->display_options['filters']['field_themes_target_id_entityreference_filter']['field'] = 'field_themes_target_id_entityreference_filter';
+  $handler->display->display_options['filters']['field_themes_target_id_entityreference_filter']['group'] = 1;
+  $handler->display->display_options['filters']['field_themes_target_id_entityreference_filter']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_themes_target_id_entityreference_filter']['expose']['operator_id'] = 'field_themes_target_id_entityreference_filter_op';
+  $handler->display->display_options['filters']['field_themes_target_id_entityreference_filter']['expose']['label'] = 'Themes';
+  $handler->display->display_options['filters']['field_themes_target_id_entityreference_filter']['expose']['operator'] = 'field_themes_target_id_entityreference_filter_op';
+  $handler->display->display_options['filters']['field_themes_target_id_entityreference_filter']['expose']['identifier'] = 'field_themes_target_id_entityreference_filter';
+  $handler->display->display_options['filters']['field_themes_target_id_entityreference_filter']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     30037204 => 0,
+    200153887 => 0,
+    188284353 => 0,
+    235660466 => 0,
+    229782242 => 0,
+    147444660 => 0,
   );
+  $handler->display->display_options['filters']['field_themes_target_id_entityreference_filter']['reference_display'] = 'hr_themes:entityreference_1';
   /* Filter criterion: Content: Document type (field_document_type) */
   $handler->display->display_options['filters']['field_document_type_target_id']['id'] = 'field_document_type_target_id';
   $handler->display->display_options['filters']['field_document_type_target_id']['table'] = 'field_data_field_document_type';
@@ -498,6 +502,26 @@ function hr_documents_views_default_views() {
     1 => 0,
     30037204 => 0,
   );
+  /* Filter criterion: Content: Funding methods (field_funding_methods) (reference filter) */
+  $handler->display->display_options['filters']['field_funding_methods_target_id_entityreference_filter']['id'] = 'field_funding_methods_target_id_entityreference_filter';
+  $handler->display->display_options['filters']['field_funding_methods_target_id_entityreference_filter']['table'] = 'field_data_field_funding_methods';
+  $handler->display->display_options['filters']['field_funding_methods_target_id_entityreference_filter']['field'] = 'field_funding_methods_target_id_entityreference_filter';
+  $handler->display->display_options['filters']['field_funding_methods_target_id_entityreference_filter']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_funding_methods_target_id_entityreference_filter']['expose']['operator_id'] = 'field_funding_methods_target_id_entityreference_filter_op';
+  $handler->display->display_options['filters']['field_funding_methods_target_id_entityreference_filter']['expose']['label'] = 'Funding methods';
+  $handler->display->display_options['filters']['field_funding_methods_target_id_entityreference_filter']['expose']['operator'] = 'field_funding_methods_target_id_entityreference_filter_op';
+  $handler->display->display_options['filters']['field_funding_methods_target_id_entityreference_filter']['expose']['identifier'] = 'field_funding_methods_target_id_entityreference_filter';
+  $handler->display->display_options['filters']['field_funding_methods_target_id_entityreference_filter']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    30037204 => 0,
+    200153887 => 0,
+    188284353 => 0,
+    235660466 => 0,
+    229782242 => 0,
+    147444660 => 0,
+  );
+  $handler->display->display_options['filters']['field_funding_methods_target_id_entityreference_filter']['reference_display'] = 'hr_fundings_panes:entityreference_2';
   $handler->display->display_options['pane_title'] = 'Documents per space';
   $handler->display->display_options['pane_category']['name'] = 'Documents';
   $handler->display->display_options['pane_category']['weight'] = '0';
@@ -620,9 +644,6 @@ function hr_documents_views_default_views() {
     t('Asc'),
     t('Desc'),
     t('field collection item from field_files_collection'),
-    t('Post date'),
-    t('Publication Date'),
-    t('Title'),
     t('All'),
     t('List'),
     t('Space'),
@@ -632,6 +653,7 @@ function hr_documents_views_default_views() {
     t('Locations'),
     t('Themes'),
     t('Document type'),
+    t('Funding methods'),
     t('Documents per space'),
     t('Documents'),
     t('Thumbnail'),

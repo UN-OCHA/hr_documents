@@ -13,11 +13,42 @@ function hr_documents_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'entity_translation_settings_node__hr_document';
+  $strongarm->value = array(
+    'default_language' => 'xx-et-current',
+    'hide_language_selector' => 0,
+    'exclude_language_none' => 1,
+    'lock_language' => 0,
+    'shared_fields_original_only' => 0,
+  );
+  $export['entity_translation_settings_node__hr_document'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__hr_document';
   $strongarm->value = array(
     'view_modes' => array(
       'search_result' => array(
         'custom_settings' => TRUE,
+      ),
+      'teaser' => array(
+        'custom_settings' => TRUE,
+      ),
+      'full' => array(
+        'custom_settings' => FALSE,
+      ),
+      'rss' => array(
+        'custom_settings' => FALSE,
+      ),
+      'ical' => array(
+        'custom_settings' => FALSE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
       ),
     ),
     'extra_fields' => array(
@@ -31,8 +62,32 @@ function hr_documents_strongarm() {
         'redirect' => array(
           'weight' => '18',
         ),
+        'language' => array(
+          'weight' => '-10',
+        ),
       ),
-      'display' => array(),
+      'display' => array(
+        'hr_core_share_button' => array(
+          'search_result' => array(
+            'weight' => '0',
+            'visible' => TRUE,
+          ),
+          'default' => array(
+            'weight' => '0',
+            'visible' => TRUE,
+          ),
+        ),
+        'hr_core_read_more_button' => array(
+          'search_result' => array(
+            'weight' => '0',
+            'visible' => TRUE,
+          ),
+          'default' => array(
+            'weight' => '0',
+            'visible' => TRUE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__hr_document'] = $strongarm;
@@ -41,7 +96,7 @@ function hr_documents_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_hr_document';
-  $strongarm->value = '0';
+  $strongarm->value = '4';
   $export['language_content_type_hr_document'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -125,7 +180,7 @@ function hr_documents_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'publishcontent_hr_document';
-  $strongarm->value = '1';
+  $strongarm->value = 1;
   $export['publishcontent_hr_document'] = $strongarm;
 
   return $export;
