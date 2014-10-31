@@ -508,6 +508,37 @@ function hr_documents_panelizer_defaults() {
     $display->content['new-ef0ff3ea-1b0f-47f3-b6d0-0f709b11c66d'] = $pane;
     $display->panels['sidebar'][9] = 'new-ef0ff3ea-1b0f-47f3-b6d0-0f709b11c66d';
     $pane = new stdClass();
+    $pane->pid = 'new-a155f7a3-81fc-4322-8231-acadd22863b0';
+    $pane->panel = 'sidebar';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_fundings';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'above',
+      'formatter' => 'entityreference_label',
+      'delta_limit' => '0',
+      'delta_offset' => '0',
+      'delta_reversed' => 0,
+      'formatter_settings' => array(
+        'link' => 0,
+      ),
+      'context' => 'panelizer',
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 10;
+    $pane->locks = array();
+    $pane->uuid = 'a155f7a3-81fc-4322-8231-acadd22863b0';
+    $display->content['new-a155f7a3-81fc-4322-8231-acadd22863b0'] = $pane;
+    $display->panels['sidebar'][10] = 'new-a155f7a3-81fc-4322-8231-acadd22863b0';
+    $pane = new stdClass();
     $pane->pid = 'new-481ea9a0-a172-4510-856e-5ef45a9e0992';
     $pane->panel = 'sidebar';
     $pane->type = 'entity_field';
@@ -531,11 +562,11 @@ function hr_documents_panelizer_defaults() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 10;
+    $pane->position = 11;
     $pane->locks = array();
     $pane->uuid = '481ea9a0-a172-4510-856e-5ef45a9e0992';
     $display->content['new-481ea9a0-a172-4510-856e-5ef45a9e0992'] = $pane;
-    $display->panels['sidebar'][10] = 'new-481ea9a0-a172-4510-856e-5ef45a9e0992';
+    $display->panels['sidebar'][11] = 'new-481ea9a0-a172-4510-856e-5ef45a9e0992';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $panelizer->display = $display;
