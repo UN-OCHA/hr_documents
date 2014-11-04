@@ -65,6 +65,9 @@ function hr_documents_strongarm() {
         'language' => array(
           'weight' => '-10',
         ),
+        'flag' => array(
+          'weight' => '10',
+        ),
       ),
       'display' => array(
         'hr_core_share_button' => array(

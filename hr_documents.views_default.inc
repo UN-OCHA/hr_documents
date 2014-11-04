@@ -123,10 +123,11 @@ function hr_documents_views_default_views() {
   $handler->display->display_options['fields']['field_document_type']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['field_document_type']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_document_type']['bypass_access'] = 0;
-  /* Field: Indexed Node: Managed by */
+  /* Field: Indexed Node: Lead Agencies */
   $handler->display->display_options['fields']['field_organizations']['id'] = 'field_organizations';
   $handler->display->display_options['fields']['field_organizations']['table'] = 'search_api_index_default_node_index';
   $handler->display->display_options['fields']['field_organizations']['field'] = 'field_organizations';
+  $handler->display->display_options['fields']['field_organizations']['label'] = 'Organization';
   $handler->display->display_options['fields']['field_organizations']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['field_organizations']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_organizations']['bypass_access'] = 0;
@@ -215,7 +216,7 @@ function hr_documents_views_default_views() {
     'field_publication_date' => 'field_publication_date',
     'field_files_collection' => 'field_files_collection',
   );
-  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['default'] = 'field_publication_date';
   $handler->display->display_options['style_options']['info'] = array(
     'title_field' => array(
       'align' => '',
@@ -223,8 +224,6 @@ function hr_documents_views_default_views() {
       'empty_column' => 0,
     ),
     'field_document_type' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
@@ -235,8 +234,8 @@ function hr_documents_views_default_views() {
       'empty_column' => 0,
     ),
     'field_publication_date' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
+      'sortable' => 1,
+      'default_sort_order' => 'desc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
@@ -281,7 +280,7 @@ function hr_documents_views_default_views() {
   $handler->display->display_options['fields']['field_document_type']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['field_document_type']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_document_type']['bypass_access'] = 0;
-  /* Field: Indexed Node: Managed by */
+  /* Field: Indexed Node: Lead Agencies */
   $handler->display->display_options['fields']['field_organizations']['id'] = 'field_organizations';
   $handler->display->display_options['fields']['field_organizations']['table'] = 'search_api_index_default_node_index';
   $handler->display->display_options['fields']['field_organizations']['field'] = 'field_organizations';
@@ -334,7 +333,7 @@ function hr_documents_views_default_views() {
     t('There are no results'),
     t('Title'),
     t('Document type'),
-    t('Managed by'),
+    t('Organization'),
     t('Publication Date'),
     t('Files'),
     t('All'),
@@ -342,6 +341,7 @@ function hr_documents_views_default_views() {
     t('List'),
     t('Table'),
     t('CSV'),
+    t('Lead Agencies'),
   );
   $export['hr_documents'] = $view;
 
