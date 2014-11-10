@@ -175,7 +175,7 @@ function hr_documents_field_default_field_instances() {
       'module' => 'entityreference',
       'settings' => array(
         'apply_chosen' => 1,
-        'match_operator' => 'CONTAINS',
+        'match_operator' => 'STARTS_WITH',
         'path' => '',
         'size' => 60,
       ),
