@@ -469,50 +469,36 @@ function hr_documents_views_default_views() {
     30037204 => 0,
   );
   $handler->display->display_options['filters']['field_bundles_target_id_entityreference_filter']['reference_display'] = 'hr_bundles:entityreference_1';
-  /* Filter criterion: Content: Coordination hubs (field_coordination_hubs) (reference filter) */
-  $handler->display->display_options['filters']['field_coordination_hubs_target_id_entityreference_filter']['id'] = 'field_coordination_hubs_target_id_entityreference_filter';
-  $handler->display->display_options['filters']['field_coordination_hubs_target_id_entityreference_filter']['table'] = 'field_data_field_coordination_hubs';
-  $handler->display->display_options['filters']['field_coordination_hubs_target_id_entityreference_filter']['field'] = 'field_coordination_hubs_target_id_entityreference_filter';
-  $handler->display->display_options['filters']['field_coordination_hubs_target_id_entityreference_filter']['group'] = 1;
-  $handler->display->display_options['filters']['field_coordination_hubs_target_id_entityreference_filter']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_coordination_hubs_target_id_entityreference_filter']['expose']['operator_id'] = 'field_coordination_hubs_target_id_entityreference_filter_op';
-  $handler->display->display_options['filters']['field_coordination_hubs_target_id_entityreference_filter']['expose']['label'] = 'Coordination hubs';
-  $handler->display->display_options['filters']['field_coordination_hubs_target_id_entityreference_filter']['expose']['operator'] = 'field_coordination_hubs_target_id_entityreference_filter_op';
-  $handler->display->display_options['filters']['field_coordination_hubs_target_id_entityreference_filter']['expose']['identifier'] = 'field_coordination_hubs_target_id';
-  $handler->display->display_options['filters']['field_coordination_hubs_target_id_entityreference_filter']['expose']['remember_roles'] = array(
+  /* Filter criterion: Content: Coordination hubs (field_coordination_hubs) */
+  $handler->display->display_options['filters']['field_coordination_hubs_target_id']['id'] = 'field_coordination_hubs_target_id';
+  $handler->display->display_options['filters']['field_coordination_hubs_target_id']['table'] = 'field_data_field_coordination_hubs';
+  $handler->display->display_options['filters']['field_coordination_hubs_target_id']['field'] = 'field_coordination_hubs_target_id';
+  $handler->display->display_options['filters']['field_coordination_hubs_target_id']['group'] = 1;
+  $handler->display->display_options['filters']['field_coordination_hubs_target_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_coordination_hubs_target_id']['expose']['operator_id'] = 'field_coordination_hubs_target_id_op';
+  $handler->display->display_options['filters']['field_coordination_hubs_target_id']['expose']['label'] = 'Coordination hubs';
+  $handler->display->display_options['filters']['field_coordination_hubs_target_id']['expose']['operator'] = 'field_coordination_hubs_target_id_op';
+  $handler->display->display_options['filters']['field_coordination_hubs_target_id']['expose']['identifier'] = 'field_coordination_hubs_target_id';
+  $handler->display->display_options['filters']['field_coordination_hubs_target_id']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     30037204 => 0,
-    200153887 => 0,
-    218860149 => 0,
-    188284353 => 0,
-    235660466 => 0,
-    229782242 => 0,
-    147444660 => 0,
   );
-  $handler->display->display_options['filters']['field_coordination_hubs_target_id_entityreference_filter']['reference_display'] = 'hr_offices_panes:entityreference_1';
-  /* Filter criterion: Content: Disasters (field_disasters) (reference filter) */
-  $handler->display->display_options['filters']['field_disasters_target_id_entityreference_filter']['id'] = 'field_disasters_target_id_entityreference_filter';
-  $handler->display->display_options['filters']['field_disasters_target_id_entityreference_filter']['table'] = 'field_data_field_disasters';
-  $handler->display->display_options['filters']['field_disasters_target_id_entityreference_filter']['field'] = 'field_disasters_target_id_entityreference_filter';
-  $handler->display->display_options['filters']['field_disasters_target_id_entityreference_filter']['group'] = 1;
-  $handler->display->display_options['filters']['field_disasters_target_id_entityreference_filter']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_disasters_target_id_entityreference_filter']['expose']['operator_id'] = 'field_disasters_target_id_entityreference_filter_op';
-  $handler->display->display_options['filters']['field_disasters_target_id_entityreference_filter']['expose']['label'] = 'Disasters';
-  $handler->display->display_options['filters']['field_disasters_target_id_entityreference_filter']['expose']['operator'] = 'field_disasters_target_id_entityreference_filter_op';
-  $handler->display->display_options['filters']['field_disasters_target_id_entityreference_filter']['expose']['identifier'] = 'field_disasters_target_id';
-  $handler->display->display_options['filters']['field_disasters_target_id_entityreference_filter']['expose']['remember_roles'] = array(
+  /* Filter criterion: Content: Disasters (field_disasters) */
+  $handler->display->display_options['filters']['field_disasters_target_id']['id'] = 'field_disasters_target_id';
+  $handler->display->display_options['filters']['field_disasters_target_id']['table'] = 'field_data_field_disasters';
+  $handler->display->display_options['filters']['field_disasters_target_id']['field'] = 'field_disasters_target_id';
+  $handler->display->display_options['filters']['field_disasters_target_id']['group'] = 1;
+  $handler->display->display_options['filters']['field_disasters_target_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_disasters_target_id']['expose']['operator_id'] = 'field_disasters_target_id_op';
+  $handler->display->display_options['filters']['field_disasters_target_id']['expose']['label'] = 'Disasters';
+  $handler->display->display_options['filters']['field_disasters_target_id']['expose']['operator'] = 'field_disasters_target_id_op';
+  $handler->display->display_options['filters']['field_disasters_target_id']['expose']['identifier'] = 'field_disasters_target_id';
+  $handler->display->display_options['filters']['field_disasters_target_id']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     30037204 => 0,
-    200153887 => 0,
-    218860149 => 0,
-    188284353 => 0,
-    235660466 => 0,
-    229782242 => 0,
-    147444660 => 0,
   );
-  $handler->display->display_options['filters']['field_disasters_target_id_entityreference_filter']['reference_display'] = 'hr_disasters_panes:entityreference_1';
   /* Filter criterion: Content: Locations (field_locations) */
   $handler->display->display_options['filters']['field_locations_target_id']['id'] = 'field_locations_target_id';
   $handler->display->display_options['filters']['field_locations_target_id']['table'] = 'field_data_field_locations';
