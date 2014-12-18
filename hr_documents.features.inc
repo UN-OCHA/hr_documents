@@ -32,15 +32,6 @@ function hr_documents_ctools_plugin_api($module = NULL, $api = NULL) {
 }
 
 /**
- * Implements hook_ctools_plugin_directory().
- */
-function hr_documents_ctools_plugin_directory($module, $plugin) {
-  if ($module == 'restful') {
-    return 'plugins/' . $plugin;
-  }
-}
-
-/**
  * Implements hook_views_api().
  */
 function hr_documents_views_api($module = NULL, $api = NULL) {
