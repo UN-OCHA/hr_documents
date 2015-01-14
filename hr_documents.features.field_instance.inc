@@ -1232,6 +1232,45 @@ function hr_documents_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'taxonomy_term-hr_document_type-field_acronym'
+  $field_instances['taxonomy_term-hr_document_type-field_acronym'] = array(
+    'bundle' => 'hr_document_type',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_acronym',
+    'label' => 'Acronym',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'linkit' => array(
+        'enable' => 0,
+        'insert_plugin' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
       'weight' => 1,
     ),
   );
@@ -1275,6 +1314,7 @@ function hr_documents_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Acronym');
   t('Body');
   t('Clusters/Sectors');
   t('Coordination hubs');

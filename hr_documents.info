@@ -66,6 +66,7 @@ features[field_instance][] = node-hr_document-group_content_access
 features[field_instance][] = node-hr_document-og_group_ref
 features[field_instance][] = node-hr_document-title_field
 features[field_instance][] = taxonomy_term-hr_document_type-description_field
+features[field_instance][] = taxonomy_term-hr_document_type-field_acronym
 features[field_instance][] = taxonomy_term-hr_document_type-name_field
 features[file_display][] = document__default__file_field_file_download_link
 features[file_display][] = document__default__file_field_file_table
