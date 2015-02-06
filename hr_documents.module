@@ -104,3 +104,12 @@ function hr_documents_search_api_views_query_alter(&$view, &$query) {
   }
 }
 
+/**
+ * Implements hook_ctools_plugin_directory().
+ */
+function hr_documents_ctools_plugin_directory($module, $plugin) {
+  if ($module == 'restful') {
+    return 'plugins/' . $plugin;
+  }
+}
+

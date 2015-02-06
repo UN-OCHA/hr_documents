@@ -112,7 +112,7 @@ function hr_documents_file_default_displays() {
   $file_display->status = TRUE;
   $file_display->settings = array(
     'image_style' => 'thumbnail',
-    'image_link' => 'file',
+    'image_link' => '',
     'show_description' => 0,
     'tag' => 'span',
     'fallback_formatter' => 0,
