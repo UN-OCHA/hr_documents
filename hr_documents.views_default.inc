@@ -602,6 +602,13 @@ function hr_documents_views_default_views() {
 
   /* Display: Thumbnail */
   $handler = $view->new_display('panel_pane', 'Thumbnail', 'thumbnail');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Content: File(s) (field_files_collection) */
   $handler->display->display_options['relationships']['field_files_collection_value']['id'] = 'field_files_collection_value';
@@ -615,6 +622,8 @@ function hr_documents_views_default_views() {
   $handler->display->display_options['fields']['field_file']['field'] = 'field_file';
   $handler->display->display_options['fields']['field_file']['relationship'] = 'field_files_collection_value';
   $handler->display->display_options['fields']['field_file']['label'] = '';
+  $handler->display->display_options['fields']['field_file']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_file']['alter']['path'] = 'node/!1';
   $handler->display->display_options['fields']['field_file']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_file']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_file']['type'] = 'file_rendered';
