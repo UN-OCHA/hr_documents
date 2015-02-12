@@ -314,7 +314,7 @@ function hr_documents_panelizer_defaults() {
       'delta_offset' => '0',
       'delta_reversed' => FALSE,
       'formatter_settings' => array(
-        'link' => FALSE,
+        'link' => 1,
       ),
       'context' => 'panelizer',
     );
