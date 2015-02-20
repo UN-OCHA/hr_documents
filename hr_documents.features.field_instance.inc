@@ -39,7 +39,7 @@ function hr_documents_field_default_field_instances() {
       'description_field' => 0,
       'entity_translation_sync' => FALSE,
       'file_directory' => 'documents/files',
-      'file_extensions' => 'pdf doc docx xls xlsx ppt pptx odt ods odp zip gz',
+      'file_extensions' => 'pdf doc docx xls xlsx xlsb xlsm ppt pptx odt ods odp zip gz',
       'max_filesize' => '',
       'user_register_form' => FALSE,
     ),
