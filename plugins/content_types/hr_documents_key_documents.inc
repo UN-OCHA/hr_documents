@@ -45,7 +45,7 @@ function hr_documents_key_documents_edit_form($form, &$form_state) {
       '#era_entity_type' => 'node',
       '#era_bundles' => array('hr_document'),
       '#era_cardinality' => 1,
-      '#default_value' => $conf['documents'][$delta],
+      '#default_value' => isset($conf['documents'][$delta]) ? $conf['documents'][$delta] : '',
       '#parents' => array('documents', $delta),
     );
   }
@@ -88,15 +88,18 @@ function hr_documents_key_documents_render($subtype, $conf, $panel_args, $contex
   $block->title = '';
   $block->content = '';
   if (!empty($documents)) {
-    $block->content = '<div class="fieldable-panels-pane">';
 
     foreach ($documents as $document) {
-      $nid = $document['entity_id'];
-      $node = node_load($nid);
-      $block->content .= drupal_render(node_view($node, 'teaser'));
+      if (isset($document['entity_id'])) {
+        $nid = $document['entity_id'];
+        $node = node_load($nid);
+        $block->content .= drupal_render(node_view($node, 'teaser'));
+      }
     }
 
-    $block->content .= '</div>';
+    if (!empty($block->content)) {
+      $block->content = '<div class="fieldable-panels-pane">'.$block->content.'</div>';
+    }
   }
 
   return $block;
