@@ -647,7 +647,7 @@ function hr_documents_views_default_views() {
     147444660 => 0,
   );
   $handler->display->display_options['filters']['field_funding_methods_target_id_entityreference_filter']['reference_display'] = 'hr_fundings_panes:entityreference_2';
-  $handler->display->display_options['pane_title'] = 'Documents';
+  $handler->display->display_options['pane_title'] = 'Dynamic';
   $handler->display->display_options['pane_category']['name'] = 'Documents';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['allow']['use_pager'] = 'use_pager';

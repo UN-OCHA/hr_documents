@@ -2,8 +2,8 @@
 
 $plugin = array(
   'single' => TRUE,
-  'title' => t('Key Documents'),
-  'description' => t('Display key documents.'),
+  'title' => t('Static'),
+  'description' => t('Chose the documents you want to display.'),
   'category' => t('Documents'),
   'edit form' => 'hr_documents_key_documents_edit_form',
   'render callback' => 'hr_documents_key_documents_render',
