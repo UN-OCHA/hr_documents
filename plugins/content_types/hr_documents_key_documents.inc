@@ -9,6 +9,7 @@ $plugin = array(
   'render callback' => 'hr_documents_key_documents_render',
   'defaults' => array(
     'documents' => '',
+    'view_mode' => '',
   ),
 );
 
@@ -57,6 +58,17 @@ function hr_documents_key_documents_edit_form($form, &$form_state) {
     '#value' => t('Add another item'),
   );
 
+  $form['view_mode'] = array(
+    '#type' => 'select',
+    '#title' => t('View mode'),
+    '#options' => array(
+      'teaser' => t('Teaser'),
+      'default' => t('Full'),
+      'link' => t('Links'),
+    ),
+    '#default_value' => isset($conf['view_more']) ? $conf['view_more'] : '',
+  );
+
   return $form;
 }
 
@@ -93,8 +105,18 @@ function hr_documents_key_documents_render($subtype, $conf, $panel_args, $contex
       if (isset($document['entity_id'])) {
         $nid = $document['entity_id'];
         $node = node_load($nid);
-        $block->content .= drupal_render(node_view($node, 'teaser'));
+        if ($conf['view_mode'] == 'link') {
+          $entity = entity_load_single('node', $nid);
+          $block->content .= '<li>'.l(entity_label('node', $entity), 'node/'.$nid).'</li>';
+        }
+        else {
+          $block->content .= drupal_render(node_view($node, $conf['view_mode']));
+        }
       }
+    }
+
+    if ($conf['view_mode'] == 'link') {
+      $block->content = '<ul>'.$block->content.'</ul>';
     }
 
     if (!empty($block->content)) {
