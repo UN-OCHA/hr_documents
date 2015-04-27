@@ -95,6 +95,7 @@ function hr_documents_key_documents_render($subtype, $conf, $panel_args, $contex
   $block = new stdClass();
 
   $documents = $conf['documents'];
+  $conf['view_mode'] = !empty($conf['view_mode']) ? $conf['view_mode'] : 'teaser';
 
   // initial content is blank
   $block->title = '';
@@ -105,12 +106,14 @@ function hr_documents_key_documents_render($subtype, $conf, $panel_args, $contex
       if (isset($document['entity_id'])) {
         $nid = $document['entity_id'];
         $node = node_load($nid);
-        if ($conf['view_mode'] == 'link') {
-          $entity = entity_load_single('node', $nid);
-          $block->content .= '<li>'.l(entity_label('node', $entity), 'node/'.$nid).'</li>';
-        }
-        else {
-          $block->content .= drupal_render(node_view($node, $conf['view_mode']));
+        if ($node != FALSE) {
+          if ($conf['view_mode'] == 'link') {
+            $entity = entity_load_single('node', $nid);
+            $block->content .= '<li>'.l(entity_label('node', $entity), 'node/'.$nid).'</li>';
+          }
+          else {
+            $block->content .= drupal_render(node_view($node, $conf['view_mode']));
+          }
         }
       }
     }
