@@ -628,27 +628,6 @@ function hr_documents_views_default_views() {
     147444660 => 0,
   );
   $handler->display->display_options['filters']['field_document_type_target_id_entityreference_filter']['reference_display'] = 'hr_document_types:entityreference_1';
-  /* Filter criterion: Content: Funding methods (field_funding_methods) (reference filter) */
-  $handler->display->display_options['filters']['field_funding_methods_target_id_entityreference_filter']['id'] = 'field_funding_methods_target_id_entityreference_filter';
-  $handler->display->display_options['filters']['field_funding_methods_target_id_entityreference_filter']['table'] = 'field_data_field_funding_methods';
-  $handler->display->display_options['filters']['field_funding_methods_target_id_entityreference_filter']['field'] = 'field_funding_methods_target_id_entityreference_filter';
-  $handler->display->display_options['filters']['field_funding_methods_target_id_entityreference_filter']['group'] = 1;
-  $handler->display->display_options['filters']['field_funding_methods_target_id_entityreference_filter']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_funding_methods_target_id_entityreference_filter']['expose']['operator_id'] = 'field_funding_methods_target_id_entityreference_filter_op';
-  $handler->display->display_options['filters']['field_funding_methods_target_id_entityreference_filter']['expose']['label'] = 'Funding methods';
-  $handler->display->display_options['filters']['field_funding_methods_target_id_entityreference_filter']['expose']['operator'] = 'field_funding_methods_target_id_entityreference_filter_op';
-  $handler->display->display_options['filters']['field_funding_methods_target_id_entityreference_filter']['expose']['identifier'] = 'field_funding_methods_target_id_entityreference_filter';
-  $handler->display->display_options['filters']['field_funding_methods_target_id_entityreference_filter']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    30037204 => 0,
-    200153887 => 0,
-    188284353 => 0,
-    235660466 => 0,
-    229782242 => 0,
-    147444660 => 0,
-  );
-  $handler->display->display_options['filters']['field_funding_methods_target_id_entityreference_filter']['reference_display'] = 'hr_fundings_panes:entityreference_2';
   $handler->display->display_options['pane_title'] = 'Dynamic';
   $handler->display->display_options['pane_category']['name'] = 'Documents';
   $handler->display->display_options['pane_category']['weight'] = '0';
